@@ -1,0 +1,25 @@
+{% extends 'dandd_app/base.html' %}
+
+{% block content %}
+<h2>Search Results for "{{ query }}"</h2>
+
+{% if products %}
+    <div class="row">
+        {% for product in products %}
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="{{ product.images_link }}" class="card-img-top" alt="{{ product.product_name }}">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ product.product_name }}</h5>
+                        <p class="card-text">{{ product.color_english }} - {{ product.size_english }}</p>
+                        <p class="card-text">MSRP: ${{ product.msrp }}</p>
+                        <a href="{% url 'product_detail' product.sku %}" class="btn btn-primary">View Details</a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% else %}
+    <p>No products found matching your search.</p>
+{% endif %}
+{% endblock %}

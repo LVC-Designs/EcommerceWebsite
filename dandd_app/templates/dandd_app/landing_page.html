@@ -1,0 +1,27 @@
+{% extends 'dandd_app/base.html' %}
+
+{% block content %}
+<div class="container">
+    <h1>Welcome to Ecom Design and Development</h1>
+    <p>Your one-stop shop for quality apparel and accessories.</p>
+
+    <p>Explore our wide range of products including apparel, bags, drinkware, and more!</p>
+
+    <a href="{% url 'product_list' %}?landing=false" class="btn btn-primary">View Catalog</a>
+
+    <div class="row mt-4">
+        <div class="col-md-4">
+            <h3>Quality Products</h3>
+            <p>We offer a wide range of high-quality products to meet your needs.</p>
+        </div>
+        <div class="col-md-4">
+            <h3>Fast Shipping</h3>
+            <p>Enjoy quick and reliable shipping on all your orders.</p>
+        </div>
+        <div class="col-md-4">
+            <h3>Customer Satisfaction</h3>
+            <p>Our top priority is ensuring our customers are happy with their purchases.</p>
+        </div>
+    </div>
+</div>
+{% endblock %}
